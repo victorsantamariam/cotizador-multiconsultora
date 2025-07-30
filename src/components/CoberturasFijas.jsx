@@ -23,7 +23,7 @@ export default function CoberturasFijas({ value = [], onChange, opciones = [] })
       <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
         Coberturas fijas
       </Typography>
-      <Box sx={{ mb: 2, display: "flex", flexWrap: "wrap", gap: 1 }}>
+      <Box sx={{ mb: 2, display: "flex", flexWrap: "wrap", gap: 1, overflowX: "auto" }}>
         {opciones.map(opcion => (
           <Chip
             key={opcion}
@@ -40,15 +40,15 @@ export default function CoberturasFijas({ value = [], onChange, opciones = [] })
         <Grid container spacing={2}>
           {value.map((cob, idx) => (
             <React.Fragment key={cob.nombre}>
-              <Grid item xs={7} sm={8}>
+              <Grid item xs={8} sm={9}>
                 <Chip
                   label={cob.nombre}
                   color="success"
                   onDelete={() => handleRemove(cob.nombre)}
-                  sx={{ mb: 1 }}
+                  sx={{ mb: 1, width: "100%" }}
                 />
               </Grid>
-              <Grid item xs={5} sm={4}>
+              <Grid item xs={4} sm={3}>
                 <NumericFormat
                   customInput={TextField}
                   value={cob.valor || ""}

@@ -85,3 +85,10 @@
   page-break-inside: avoid !important;
   break-inside: avoid !important;
 }
+
+@media print {
+  .pdf-portada {
+    width: 794px !important;
+    height: 1122px !important;
+  }
+}

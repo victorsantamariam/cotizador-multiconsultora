@@ -9,9 +9,11 @@ export default function PdfPortada({ consultora }) {
   return (
     <>
       <Box
+        className="pdf-portada"
         sx={{
-          width: "794px",
-          height: "1122px",
+          width: { xs: '99vw', sm: '700px', md: '794px' },
+          height: { xs: 'auto', md: '1122px' },
+          maxWidth: "100vw",
           background: "#fff",
           display: "flex",
           flexDirection: "column",

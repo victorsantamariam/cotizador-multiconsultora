@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, Typography, Grid, TextField, IconButton } from "@mui/material";
+import { Box, Typography, Grid, TextField, IconButton, Button } from "@mui/material";
 import { NumericFormat } from "react-number-format";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { Button } from "@mui/material";
 
 export default function CoberturasDinamicas({ value = [], onChange }) {
   const handleNombre = (idx, nombre) => {
@@ -28,7 +27,7 @@ export default function CoberturasDinamicas({ value = [], onChange }) {
       </Typography>
       {value.map((cob, idx) => (
         <Grid container spacing={1} alignItems="center" key={idx} sx={{ mb: 1 }}>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6}>
             <TextField
               label="Cobertura"
               value={cob.nombre}
@@ -36,7 +35,7 @@ export default function CoberturasDinamicas({ value = [], onChange }) {
               fullWidth
             />
           </Grid>
-          <Grid item xs={5}>
+          <Grid item xs={10} sm={5}>
             <NumericFormat
               customInput={TextField}
               label="Valor asegurado"
@@ -48,7 +47,7 @@ export default function CoberturasDinamicas({ value = [], onChange }) {
               fullWidth
             />
           </Grid>
-          <Grid item xs={1}>
+          <Grid item xs={2} sm={1} sx={{ textAlign: { xs: "right", sm: "center" } }}>
             <IconButton onClick={() => handleRemove(idx)}>
               <DeleteIcon />
             </IconButton>

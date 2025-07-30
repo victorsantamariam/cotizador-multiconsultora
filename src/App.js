@@ -180,12 +180,12 @@ export default function App() {
       `Hola ${cliente.nombre}, te comparto la cotización de seguro MetLife.`
     );
     const celularLimpio = cliente.celular.replace(/\D/g, "");
-  if (celularLimpio) {
-    window.open(`https://wa.me/${celularLimpio}?text=${mensaje}`);
-  } else {
-    alert("El cliente no tiene número de celular registrado.");
-  }
-};
+    if (celularLimpio) {
+      window.open(`https://wa.me/${celularLimpio}?text=${mensaje}`);
+    } else {
+      alert("El cliente no tiene número de celular registrado.");
+    }
+  };
 
   // Valida que todos los datos necesarios estén completos
   const datosCompletos =
@@ -222,8 +222,10 @@ export default function App() {
             background: "#fff",
             borderRadius: 3,
             boxShadow: "0 2px 24px #b7e4fc33",
-            p: 4,
-            minWidth: 320,
+            p: { xs: 2, sm: 4 },
+            minWidth: { xs: 250, sm: 320 },
+            maxWidth: 360,
+            width: "100%",
           }}
         >
           <Typography
@@ -274,31 +276,32 @@ export default function App() {
         sx={{
           display: "flex",
           alignItems: "center",
-          padding: "24px 32px 0 32px",
+          padding: { xs: "16px 10px 0 10px", sm: "24px 32px 0 32px" },
           justifyContent: "space-between",
         }}
       >
         <img
           src={metlifeLogo}
           alt="Metlife Logo"
-          style={{ height: 48, width: "auto" }}
+          style={{ height: 38, width: "auto" }}
         />
-        <Box sx={{ width: 48 }}></Box>
+        <Box sx={{ width: 38 }}></Box>
       </Box>
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          mt: 3,
+          mt: { xs: 2, sm: 3 },
         }}
       >
         <img
           src={consultora.foto}
           alt={consultora.nombre}
           style={{
-            width: 120,
-            height: 120,
+            width: "100%",
+            maxWidth: 120,
+            height: "auto",
             borderRadius: "50%",
             border: "5px solid #17d4b6",
             boxShadow: "0 2px 16px #1abc7480",
@@ -308,13 +311,13 @@ export default function App() {
         <Typography variant="h5" sx={{ fontWeight: 700, mt: 2 }}>
           {consultora.nombre}
         </Typography>
-        <Typography sx={{ color: "#757575", fontSize: 20, mb: 1 }}>
+        <Typography sx={{ color: "#757575", fontSize: { xs: 16, sm: 20 }, mb: 1 }}>
           {consultora.cargo}
         </Typography>
-        <Typography sx={{ fontSize: 16, color: "#1976d2" }}>
+        <Typography sx={{ fontSize: { xs: 13, sm: 16 }, color: "#1976d2" }}>
           {consultora.email}
         </Typography>
-        <Typography sx={{ fontSize: 16, color: "#1976d2" }}>
+        <Typography sx={{ fontSize: { xs: 13, sm: 16 }, color: "#1976d2" }}>
           {consultora.telefono}
         </Typography>
         <Button
@@ -332,13 +335,13 @@ export default function App() {
           {/* Datos del cliente */}
           <Box
             sx={{
-              maxWidth: 750,
-              margin: "0 auto",
+              maxWidth: { xs: '99vw', sm: 600, md: 750 },
+              margin: { xs: 1, sm: "0 auto" },
               background: "#fff",
               borderRadius: 3,
               boxShadow: "0 2px 24px #b7e4fc33",
-              p: 4,
-              mt: 3,
+              p: { xs: 2, sm: 3, md: 4 },
+              mt: { xs: 2, sm: 3 },
             }}
           >
             <Typography
@@ -348,6 +351,7 @@ export default function App() {
                 mb: 2,
                 fontWeight: 700,
                 letterSpacing: 1,
+                fontSize: { xs: 16, sm: 18 }
               }}
             >
               Datos del cliente
@@ -438,12 +442,12 @@ export default function App() {
           {/* Selección de póliza */}
           <Box
             sx={{
-              maxWidth: 750,
-              margin: "32px auto 0 auto",
+              maxWidth: { xs: '99vw', sm: 600, md: 750 },
+              margin: { xs: "16px 0 0 0", sm: "32px auto 0 auto" },
               background: "#fff",
               borderRadius: 3,
               boxShadow: "0 2px 24px #b7e4fc33",
-              p: 4,
+              p: { xs: 2, sm: 3, md: 4 },
             }}
           >
             <Typography
@@ -453,6 +457,7 @@ export default function App() {
                 mb: 2,
                 fontWeight: 700,
                 letterSpacing: 1,
+                fontSize: { xs: 16, sm: 18 }
               }}
             >
               Selecciona el tipo de póliza
@@ -508,11 +513,11 @@ export default function App() {
                     background: "#e3f4fd",
                     border: "2px solid #1976d2",
                     borderRadius: 2,
-                    p: { xs: 2, md: 3 },
+                    p: { xs: 2, sm: 3 },
                     mt: 4,
                     mb: 3,
                     boxShadow: "0 2px 12px #1976d2aa",
-                    maxWidth: 700,
+                    maxWidth: { xs: '99vw', sm: 600, md: 700 },
                     margin: "0 auto",
                   }}
                 >
@@ -583,12 +588,12 @@ export default function App() {
           {/* Cotización */}
           <Box
             sx={{
-              maxWidth: 750,
-              margin: "32px auto 0 auto",
+              maxWidth: { xs: '99vw', sm: 600, md: 750 },
+              margin: { xs: "16px 0 0 0", sm: "32px auto 0 auto" },
               background: "#fff",
               borderRadius: 3,
               boxShadow: "0 2px 24px #b7e4fc33",
-              p: 4,
+              p: { xs: 2, sm: 3, md: 4 },
             }}
           >
             <Typography
@@ -598,6 +603,7 @@ export default function App() {
                 mb: 2,
                 fontWeight: 700,
                 letterSpacing: 1,
+                fontSize: { xs: 16, sm: 18 }
               }}
             >
               Datos de la cotización
@@ -662,12 +668,12 @@ export default function App() {
           {/* Coberturas fijas + dinámicas */}
           <Box
             sx={{
-              maxWidth: 750,
-              margin: "32px auto 0 auto",
+              maxWidth: { xs: '99vw', sm: 600, md: 750 },
+              margin: { xs: "16px 0 0 0", sm: "32px auto 0 auto" },
               background: "#fff",
               borderRadius: 3,
               boxShadow: "0 2px 24px #b7e4fc33",
-              p: 4,
+              p: { xs: 2, sm: 3, md: 4 },
             }}
           >
             <CoberturasFijas
@@ -692,12 +698,12 @@ export default function App() {
           {/* Datos adicionales de inversión */}
           <Box
             sx={{
-              maxWidth: 750,
-              margin: "32px auto 0 auto",
+              maxWidth: { xs: '99vw', sm: 600, md: 750 },
+              margin: { xs: "16px 0 0 0", sm: "32px auto 0 auto" },
               background: "#fff",
               borderRadius: 3,
               boxShadow: "0 2px 24px #b7e4fc33",
-              p: 4,
+              p: { xs: 2, sm: 3, md: 4 },
             }}
           >
             <Typography
@@ -707,6 +713,7 @@ export default function App() {
                 mb: 2,
                 fontWeight: 700,
                 letterSpacing: 1,
+                fontSize: { xs: 16, sm: 18 }
               }}
             >
               Datos adicionales de inversión
@@ -775,8 +782,8 @@ export default function App() {
           {/* Botón final */}
           <Box
             sx={{
-              maxWidth: 750,
-              margin: "32px auto 40px auto",
+              maxWidth: { xs: '99vw', sm: 600, md: 750 },
+              margin: { xs: "16px 0 32px 0", sm: "32px auto 40px auto" },
               textAlign: "center",
             }}
           >
@@ -785,10 +792,10 @@ export default function App() {
               color="success"
               size="large"
               sx={{
-                px: 5,
+                px: { xs: 2, sm: 5 },
                 borderRadius: 2,
                 fontWeight: 700,
-                fontSize: 18,
+                fontSize: { xs: 16, sm: 18 },
               }}
               disabled={!datosCompletos}
               onClick={handleGenerarResumen}
@@ -816,7 +823,7 @@ export default function App() {
           {/* COTIZACIÓN */}
           <Box
             sx={{
-              maxWidth: 900,
+              maxWidth: { xs: '99vw', sm: 700, md: 900 },
               margin: "0 auto",
               background: "#fff",
               borderRadius: 5,
@@ -828,18 +835,20 @@ export default function App() {
             <Box
               sx={{
                 display: "flex",
-                alignItems: "center",
+                flexDirection: { xs: "column", sm: "row" },
+                alignItems: { xs: "flex-start", sm: "center" },
                 justifyContent: "space-between",
                 mb: 4,
+                gap: { xs: 2, sm: 0 }
               }}
             >
               <Box>
                 <img
                   src={metlifeLogo}
                   alt="Metlife Logo"
-                  style={{ height: 38, marginBottom: 12 }}
+                  style={{ height: 38, marginBottom: 12, maxWidth: "100%" }}
                 />
-                <Typography variant="h5" sx={{ fontWeight: 700 }}>
+                <Typography variant="h5" sx={{ fontWeight: 700, fontSize: { xs: 16, sm: 20 } }}>
                   Cotización de Seguro de Vida / Plan Proteccion
                 </Typography>
               </Box>
@@ -847,8 +856,9 @@ export default function App() {
                 src={consultora.foto}
                 alt={consultora.nombre}
                 style={{
-                  width: 76,
-                  height: 76,
+                  width: "100%",
+                  maxWidth: 76,
+                  height: "auto",
                   borderRadius: "50%",
                   border: "3px solid #17d4b6",
                   boxShadow: "0 2px 12px #1abc7480",
@@ -907,7 +917,7 @@ export default function App() {
               Coberturas incluidas
             </Typography>
             <div style={{ overflowX: "auto", marginBottom: 24 }}>
-              <table className="excel-table">
+              <table className="excel-table" style={{ minWidth: 320, width: "100%" }}>
                 <thead>
                   <tr>
                     <th>COBERTURA</th>
@@ -935,10 +945,10 @@ export default function App() {
                     background: "#e3f4fd",
                     border: "2px solid #1976d2",
                     borderRadius: 2,
-                    p: { xs: 2, md: 3 },
+                    p: { xs: 2, sm: 3 },
                     my: 3,
                     boxShadow: "0 2px 12px #1976d2aa",
-                    maxWidth: 700,
+                    maxWidth: { xs: '99vw', sm: 600, md: 700 },
                     margin: "0 auto",
                   }}
                 >
@@ -1013,7 +1023,7 @@ export default function App() {
               sx={{
                 background: "#aeea8c",
                 borderRadius: 2,
-                p: 2,
+                p: { xs: 1, sm: 2 },
                 mb: 3,
               }}
             >
@@ -1083,7 +1093,7 @@ export default function App() {
                 sx={{
                   background: "#e8f5e9",
                   borderRadius: 2,
-                  p: 3,
+                  p: { xs: 1, sm: 3 },
                   mb: 3,
                 }}
               >
@@ -1096,7 +1106,7 @@ export default function App() {
                 <ul style={{ margin: 0, paddingLeft: 22, listStyle: "none" }}>
                   {asistenciasSeleccionadas.map((asistencia, idx) => (
                     <li key={idx} style={{ fontSize: 17, marginBottom: 2 }}>
-                    <span style={{ color: "#26b164", fontWeight: "bold", marginRight: 8 }}>✅</span>
+                      <span style={{ color: "#26b164", fontWeight: "bold", marginRight: 8 }}>✅</span>
                       {asistencia}
                     </li>
                   ))}
@@ -1108,8 +1118,9 @@ export default function App() {
             <Box
               sx={{
                 display: "flex",
+                flexDirection: { xs: "column", sm: "row" },
                 justifyContent: "flex-end",
-                gap: 6,
+                gap: { xs: 2, sm: 6 },
                 mb: 2,
               }}
             >
@@ -1153,7 +1164,7 @@ export default function App() {
                 sx={{
                   background: "#f9fcfa",
                   borderRadius: 2,
-                  p: 2,
+                  p: { xs: 1, sm: 2 },
                   mb: 2,
                 }}
               >
@@ -1169,7 +1180,12 @@ export default function App() {
             {/* Datos de la consultora */}
             <Box
               className="no-break"
-              sx={{ display: "flex", alignItems: "center", gap: 2 }}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 2,
+                flexDirection: { xs: "column", sm: "row" }
+              }}
             >
               <img
                 src={consultora.foto}
@@ -1190,7 +1206,7 @@ export default function App() {
                 <Button
                   variant="contained"
                   color="info"
-                  sx={{ fontWeight: 700, flex: 1, minWidth: 170 }}
+                  sx={{ fontWeight: 700, flex: 1, minWidth: { xs: 120, sm: 150, md: 170 } }}
                   onClick={handleDescargarPDF}
                 >
                   Descargar PDF
@@ -1198,7 +1214,7 @@ export default function App() {
                 <Button
                   variant="contained"
                   color="primary"
-                  sx={{ fontWeight: 700, flex: 1, minWidth: 170 }}
+                  sx={{ fontWeight: 700, flex: 1, minWidth: { xs: 120, sm: 150, md: 170 } }}
                   onClick={handleDescargarYEnviarCorreo}
                 >
                   Enviar por correo
@@ -1206,14 +1222,14 @@ export default function App() {
                 <Button
                   variant="contained"
                   color="success"
-                  sx={{ fontWeight: 700, flex: 1, minWidth: 170 }}
+                  sx={{ fontWeight: 700, flex: 1, minWidth: { xs: 120, sm: 150, md: 170 } }}
                   onClick={handleDescargarYEnviarWhatsApp}
                 >
                   Enviar por WhatsApp
                 </Button>
                 <Button
                   variant="outlined"
-                  sx={{ fontWeight: 700, flex: 1, minWidth: 170 }}
+                  sx={{ fontWeight: 700, flex: 1, minWidth: { xs: 120, sm: 150, md: 170 } }}
                   onClick={() => setShowResumen(false)}
                 >
                   Editar datos

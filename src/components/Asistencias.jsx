@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Box, Typography, FormGroup, FormControlLabel, Checkbox } from "@mui/material";
 
@@ -27,13 +26,13 @@ export default function Asistencias({ seleccionadas, onChange }) {
   return (
     <Box
       sx={{
-        maxWidth: 750,
-        margin: "32px auto 0 auto",
+        maxWidth: { xs: '99vw', sm: 650, md: 750 },
+        margin: { xs: "16px 0 0 0", sm: "32px auto 0 auto" },
         background: "#fff",
         borderRadius: 3,
         boxShadow: "0 2px 24px #b7e4fc33",
-        p: 4,
-        mt: 4,
+        p: { xs: 2, sm: 4 },
+        mt: { xs: 2, sm: 4 },
       }}
     >
       <Typography variant="h6" sx={{ color: "#1abc74", mb: 2, fontWeight: 700 }}>
